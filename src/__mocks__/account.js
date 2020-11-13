@@ -8,18 +8,18 @@ const JWT_EXPIRES_IN = '2 days';
 
 const users = [
   {
-    id: '5e86809283e28b96d2d38537',
+    id: '1',
     avatar: '/static/images/avatars/avatar_6.png',
     canHire: false,
-    country: 'USA',
-    email: 'demo@devias.io',
+    country: 'ECUADOR',
+    email: 'guti06@hotmail.es',
     isPublic: true,
-    name: 'Katarina Smith',
-    password: 'Password123',
+    name: 'José Gutiérrez',
+    password: '123',
     phone: '+40 777666555',
     role: 'admin',
-    state: 'New York',
-    tier: 'Premium'
+    state: 'Quito',
+    tier: 'Administrador'
   }
 ];
 

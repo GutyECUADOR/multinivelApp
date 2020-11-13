@@ -51,6 +51,7 @@
     "chart.js": "^2.9.3",
     "clsx": "^1.1.1",
     "draft-js": "^0.11.7",
+    "family-binary-tree": "^1.0.4",
     "firebase": "^7.17.1",
     "formik": "^2.1.5",
     "history": "^4.10.1",

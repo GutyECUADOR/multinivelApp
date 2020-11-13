@@ -73,14 +73,14 @@ const Header = ({ className, ...rest }) => {
             variant="body1"
             color="textPrimary"
           >
-            Reports
+            Matriz Principal
           </Typography>
         </Breadcrumbs>
         <Typography
           variant="h3"
           color="textPrimary"
         >
-          Here&apos;s what&apos;s happening
+          Conozca como esta su matriz
         </Typography>
       </Grid>
       <Grid item>

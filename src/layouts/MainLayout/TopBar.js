@@ -5,15 +5,12 @@ import PropTypes from 'prop-types';
 import {
   AppBar,
   Box,
-  Button,
-  Divider,
   Toolbar,
   Hidden,
   Typography,
   Link,
   makeStyles
 } from '@material-ui/core';
-import { APP_VERSION } from 'src/constants';
 import Logo from 'src/components/Logo';
 
 const useStyles = makeStyles((theme) => ({
