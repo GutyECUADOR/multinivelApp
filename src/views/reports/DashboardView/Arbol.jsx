@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-
 import BinaryTree from "family-binary-tree";
 
 const data = [

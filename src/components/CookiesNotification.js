@@ -59,8 +59,8 @@ const CookiesNotification = () => {
           variant="body1"
           color="inherit"
         >
-          We use Cookies to ensure that we give you the best experience on our
-          website. Read our
+          Este sitio utiliza Cookies para asegurarnos de que tengas una mejor experiencia de usuario
+          . Lee nuestras
           {' '}
           <Link
             component="a"
@@ -69,7 +69,7 @@ const CookiesNotification = () => {
             href="https://devias.io/privacy-policy"
             target="_blank"
           >
-            Privacy Policy
+            Politicas de Privacidad
           </Link>
           .
         </Typography>
@@ -83,7 +83,7 @@ const CookiesNotification = () => {
             variant="contained"
             className={classes.action}
           >
-            I Agree
+            Aceptar
           </Button>
         </Box>
       </div>

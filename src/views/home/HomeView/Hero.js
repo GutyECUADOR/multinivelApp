@@ -74,13 +74,13 @@ const Hero = ({ className, ...rest }) => {
                 variant="overline"
                 color="secondary"
               >
-                Introducing
+                Introducción
               </Typography>
               <Typography
                 variant="h1"
                 color="textPrimary"
               >
-                Devias React Material Kit - PRO
+                Bienvenido
               </Typography>
               <Box mt={3}>
                 <Typography
@@ -141,18 +141,6 @@ const Hero = ({ className, ...rest }) => {
                     </Typography>
                   </Grid>
                 </Grid>
-              </Box>
-              <Box mt={3}>
-                <img
-                  alt="Javascript"
-                  className={classes.technologyIcon}
-                  src="/static/images/javascript.svg"
-                />
-                <img
-                  alt="Typescript"
-                  className={classes.technologyIcon}
-                  src="/static/images/typescript.svg"
-                />
               </Box>
             </Box>
           </Grid>
