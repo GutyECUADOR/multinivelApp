@@ -46,7 +46,7 @@ const Header = ({ className, ...rest }) => {
   const classes = useStyles();
   const actionRef = useRef(null);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [timeRange, setTimeRange] = useState(timeRanges[2].text);
+  const [timeRange, setTimeRange] = useState(timeRanges[0].text);
 
   return (
     <Grid
@@ -84,17 +84,6 @@ const Header = ({ className, ...rest }) => {
         </Typography>
       </Grid>
       <Grid item>
-        <Button
-          ref={actionRef}
-          onClick={() => setMenuOpen(true)}
-          startIcon={
-            <SvgIcon fontSize="small">
-              <CalendarIcon />
-            </SvgIcon>
-          }
-        >
-          {timeRange}
-        </Button>
         <Menu
           anchorEl={actionRef.current}
           onClose={() => setMenuOpen(false)}
