@@ -68,10 +68,6 @@ const TopBar = ({
           ml={2}
           flexGrow={1}
         />
-        <Search />
-        <Contacts />
-        <Notifications />
-        <Settings />
         <Box ml={2}>
           <Account />
         </Box>

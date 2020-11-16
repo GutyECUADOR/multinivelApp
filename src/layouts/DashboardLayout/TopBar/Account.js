@@ -96,16 +96,10 @@ const Account = () => {
           component={RouterLink}
           to="/app/social/profile"
         >
-          Profile
-        </MenuItem>
-        <MenuItem
-          component={RouterLink}
-          to="/app/account"
-        >
-          Account
+          Perfil
         </MenuItem>
         <MenuItem onClick={handleLogout}>
-          Logout
+          Cerrar Sesion
         </MenuItem>
       </Menu>
     </>

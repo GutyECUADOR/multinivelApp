@@ -64,7 +64,7 @@ const Search = () => {
 
   return (
     <>
-      <Tooltip title="Search">
+      <Tooltip title="Buscar">
         <IconButton
           color="inherit"
           onClick={handleOpen}
