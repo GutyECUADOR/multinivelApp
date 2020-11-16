@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialAuthState);
 
   const login = async (email, password) => {
-    const response = await axios.post('/api/account/login', { email, password });
+    const response = await axios.post('http://localhost/multinivel/index.php?action=getToken', { email, password });
     const { accessToken, user } = response.data;
 
     setSession(accessToken);

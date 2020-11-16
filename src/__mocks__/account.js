@@ -31,11 +31,11 @@ mock.onPost('/api/account/login').reply(async (config) => {
     const user = users.find((_user) => _user.email === email);
 
     if (!user) {
-      return [400, { message: 'Please check your email and password' }];
+      return [400, { message: 'Por favor revise su usuario y password.' }];
     }
 
     if (user.password !== password) {
-      return [400, { message: 'Invalid password' }];
+      return [400, { message: 'Password incorrecto' }];
     }
 
     const accessToken = jwt.sign(

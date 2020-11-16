@@ -13,7 +13,7 @@ const HomeView = () => {
   return (
     <Page
       className={classes.root}
-      title="Home"
+      title="Bienvenido"
     >
       <Hero />
     </Page>
