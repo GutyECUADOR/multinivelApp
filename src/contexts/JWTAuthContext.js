@@ -89,8 +89,11 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialAuthState);
 
   const login = async (email, password) => {
+    
     const response = await axios.post('http://localhost/multinivel/index.php?action=getToken', { email, password });
     const { accessToken, user } = response.data;
+
+    console.log(response.data);
 
     setSession(accessToken);
     dispatch({
@@ -132,7 +135,7 @@ export const AuthProvider = ({ children }) => {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('/api/account/me');
+          const response = await axios.get('http://localhost/multinivel/index.php?action=getInfoUsuario');
           const { user } = response.data;
 
           dispatch({
