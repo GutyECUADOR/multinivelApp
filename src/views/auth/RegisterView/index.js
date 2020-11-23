@@ -4,19 +4,15 @@ import {
   Box,
   Card,
   CardContent,
-  Chip,
   Container,
   Divider,
   Link,
-  Tooltip,
   Typography,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Logo from 'src/components/Logo';
 import useAuth from 'src/hooks/useAuth';
-import Auth0Register from './Auth0Register';
-import FirebaseAuthRegister from './FirebaseAuthRegister';
 import JWTRegister from './JWTRegister';
 
 const methodIcons = {
@@ -72,65 +68,9 @@ const RegisterView = () => {
   return (
     <Page
       className={classes.root}
-      title="Register"
+      title="Registro"
     >
-      <div className={classes.banner}>
-        <Container maxWidth="md">
-          <Box
-            alignItems="center"
-            display="flex"
-            justifyContent="center"
-          >
-            <Chip
-              color="secondary"
-              label="NEW"
-              size="small"
-              className={classes.bannerChip}
-            />
-            <Box
-              alignItems="center"
-              display="flex"
-            >
-              <Typography
-                color="textPrimary"
-                variant="h6"
-              >
-                Visit our
-                {' '}
-                <Link
-                  component={RouterLink}
-                  to="/docs"
-                >
-                  docs
-                </Link>
-                {' '}
-                and find out how to switch between
-              </Typography>
-              <Tooltip title="Auth0">
-                <img
-                  alt="Auth0"
-                  className={classes.methodIcon}
-                  src={methodIcons['Auth0']}
-                />
-              </Tooltip>
-              <Tooltip title="Firebase">
-                <img
-                  alt="Firebase"
-                  className={classes.methodIcon}
-                  src={methodIcons['FirebaseAuth']}
-                />
-              </Tooltip>
-              <Tooltip title="JSON Web Token">
-                <img
-                  alt="JWT"
-                  className={classes.methodIcon}
-                  src={methodIcons['JWT']}
-                />
-              </Tooltip>
-            </Box>
-          </Box>
-        </Container>
-      </div>
+     
       <Container
         className={classes.cardContainer}
         maxWidth="sm"
@@ -158,13 +98,13 @@ const RegisterView = () => {
                   gutterBottom
                   variant="h2"
                 >
-                  Register
+                  Registro de Usuario
                 </Typography>
                 <Typography
                   variant="body2"
                   color="textSecondary"
                 >
-                  Register on the internal platform
+                  Ingresa la siguiente información para darte de alta en la plataforma
                 </Typography>
               </div>
               <div className={classes.currentMethodIcon}>
@@ -178,8 +118,6 @@ const RegisterView = () => {
               flexGrow={1}
               mt={3}
             >
-              {method === 'Auth0' && <Auth0Register /> }
-              {method === 'FirebaseAuth' && <FirebaseAuthRegister /> }
               {method === 'JWT' && <JWTRegister /> }
             </Box>
             <Box my={3}>
@@ -191,7 +129,7 @@ const RegisterView = () => {
               variant="body2"
               color="textSecondary"
             >
-              Having an account
+              Ya tengo una cuenta, Iniciar Sesión
             </Link>
           </CardContent>
         </Card>

@@ -110,7 +110,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (email, name, password) => {
-    const response = await axios.post('/api/account/register', {
+    const response = await axios.post('http://localhost/multinivel/index.php?action=registerUser', {
       email,
       name,
       password

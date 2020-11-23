@@ -35,10 +35,10 @@ const JWTRegister = ({ className, ...rest }) => {
         submit: null
       }}
       validationSchema={Yup.object().shape({
-        email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-        name: Yup.string().max(255).required('Name is required'),
-        password: Yup.string().min(7).max(255).required('Password is required'),
-        policy: Yup.boolean().oneOf([true], 'This field must be checked')
+        email: Yup.string().email('Ingresa un email válido').max(255).required('El email es requerido'),
+        name: Yup.string().max(255).required('El nombre es requerido'),
+        password: Yup.string().min(3).max(255).required('La contraseña es requerida'),
+        policy: Yup.boolean().oneOf([true], 'Debes aceptar nuestros terminos & condiciones')
       })}
       onSubmit={async (values, {
         setErrors,
@@ -79,7 +79,7 @@ const JWTRegister = ({ className, ...rest }) => {
             error={Boolean(touched.name && errors.name)}
             fullWidth
             helperText={touched.name && errors.name}
-            label="Name"
+            label="Nombre"
             margin="normal"
             name="name"
             onBlur={handleBlur}
@@ -91,7 +91,7 @@ const JWTRegister = ({ className, ...rest }) => {
             error={Boolean(touched.email && errors.email)}
             fullWidth
             helperText={touched.email && errors.email}
-            label="Email Address"
+            label="Email"
             margin="normal"
             name="email"
             onBlur={handleBlur}
@@ -104,7 +104,7 @@ const JWTRegister = ({ className, ...rest }) => {
             error={Boolean(touched.password && errors.password)}
             fullWidth
             helperText={touched.password && errors.password}
-            label="Password"
+            label="Contraseña"
             margin="normal"
             name="password"
             onBlur={handleBlur}
@@ -128,14 +128,14 @@ const JWTRegister = ({ className, ...rest }) => {
               variant="body2"
               color="textSecondary"
             >
-              I have read the
+              Acepto todos los 
               {' '}
               <Link
                 component="a"
                 href="#"
                 color="secondary"
               >
-                Terms and Conditions
+                Terminos & Condiciones
               </Link>
             </Typography>
           </Box>
@@ -160,7 +160,7 @@ const JWTRegister = ({ className, ...rest }) => {
               type="submit"
               variant="contained"
             >
-              Register
+              Registrarme
             </Button>
           </Box>
         </form>
