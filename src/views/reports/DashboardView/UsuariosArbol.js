@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const UsuariosArbol = ({ className, ...rest }) => {
   const classes = useStyles();
 
-  const usuariosList = [
+  /* const usuariosList = [
     {
       pathname: 'Guty José'
     },
@@ -38,7 +38,19 @@ const UsuariosArbol = ({ className, ...rest }) => {
     {
       pathname: 'Mario Ortega'
     }
-  ];
+  ]; */
+
+  const [usuariosList, setUsuarios] = useState([]);
+
+  const consultarAPI = async () => {
+    fetch('http://localhost/multinivel/index.php?action=getArbol&id=1')
+    .then(response => response.json())
+    .then(data => setUsuarios( data ));
+  }
+  
+  useEffect( () => {
+    consultarAPI();
+  }, []); 
 
   return (
     <Card
@@ -51,7 +63,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
             color="inherit"
             variant="h3"
           >
-           12
+          {usuariosList.length}
           </Typography>
         )}
         classes={{ action: classes.current }}
@@ -61,13 +73,13 @@ const UsuariosArbol = ({ className, ...rest }) => {
         titleTypographyProps={{ color: 'textPrimary' }}
       />
       <List>
-        {usuariosList.map((page, index) => (
+        {usuariosList.map((usuario, index) => (
           <ListItem
             divider
-            key={page.pathname}
+            key={usuario.pathname}
           >
             <ListItemText
-              primary={index+1 + '. ' + page.pathname}
+              primary={index+1 + '. ' + usuario.username}
               primaryTypographyProps={{ color: 'textSecondary', variant: 'body2' }}
             />
           </ListItem>
