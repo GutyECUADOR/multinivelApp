@@ -10,8 +10,6 @@ import {
 import Page from 'src/components/Page';
 import Header from './Header';
 import General from './General';
-import Subscription from './Subscription';
-import Notifications from './Notifications';
 import Security from './Security';
 
 const useStyles = makeStyles((theme) => ({
@@ -29,9 +27,7 @@ const AccountView = () => {
 
   const tabs = [
     { value: 'general', label: 'General' },
-    { value: 'subscription', label: 'Subscription' },
-    { value: 'notifications', label: 'Notifications' },
-    { value: 'security', label: 'Security' }
+    { value: 'security', label: 'Seguridad' }
   ];
 
   const handleTabsChange = (event, value) => {
@@ -41,7 +37,7 @@ const AccountView = () => {
   return (
     <Page
       className={classes.root}
-      title="Settings"
+      title="Mi cuenta"
     >
       <Container maxWidth="lg">
         <Header />
@@ -65,8 +61,6 @@ const AccountView = () => {
         <Divider />
         <Box mt={3}>
           {currentTab === 'general' && <General />}
-          {currentTab === 'subscription' && <Subscription />}
-          {currentTab === 'notifications' && <Notifications />}
           {currentTab === 'security' && <Security />}
         </Box>
       </Container>

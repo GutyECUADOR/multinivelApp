@@ -27,17 +27,17 @@ const Header = ({ className, ...rest }) => {
         aria-label="breadcrumb"
       >
         <Link color="inherit" to="/app" component={RouterLink}>
-          Dashboard
+          App
         </Link>
         <Typography color="textPrimary">
-          Account
+          Mi cuenta
         </Typography>
       </Breadcrumbs>
       <Typography
         variant="h3"
         color="textPrimary"
       >
-        Settings
+        Mi cuenta
       </Typography>
     </div>
   );

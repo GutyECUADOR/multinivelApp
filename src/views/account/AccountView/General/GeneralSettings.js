@@ -91,7 +91,7 @@ const GeneralSettings = ({ className, user, ...rest }) => {
             className={clsx(classes.root, className)}
             {...rest}
           >
-            <CardHeader title="Profile" />
+            <CardHeader title="Perfil" />
             <Divider />
             <CardContent>
               <Grid
@@ -123,7 +123,7 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                   <TextField
                     error={Boolean(touched.email && errors.email)}
                     fullWidth
-                    helperText={touched.email && errors.email ? errors.email : 'We will use this email to contact you'}
+                    helperText={touched.email && errors.email ? errors.email : 'Email a el que te contactaremos.'}
                     label="Email Address"
                     name="email"
                     onBlur={handleBlur}
@@ -205,56 +205,7 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <Typography
-                    variant="h6"
-                    color="textPrimary"
-                  >
-                    Make Contact Info Public
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                  >
-                    Means that anyone viewing your profile will be able to see your
-                    contacts details
-                  </Typography>
-                  <Switch
-                    checked={values.isPublic}
-                    edge="start"
-                    name="isPublic"
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <Typography
-                    variant="h6"
-                    color="textPrimary"
-                  >
-                    Available to hire
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                  >
-                    Toggling this will let your teammates know that you are available
-                    for acquiring new projects
-                  </Typography>
-                  <Switch
-                    checked={values.canHire}
-                    edge="start"
-                    name="canHire"
-                    onChange={handleChange}
-                  />
-                </Grid>
+                
               </Grid>
               {errors.submit && (
                 <Box mt={3}>
@@ -276,7 +227,7 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                 type="submit"
                 variant="contained"
               >
-                Save Changes
+                Guardar
               </Button>
             </Box>
           </Card>

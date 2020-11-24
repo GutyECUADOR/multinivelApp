@@ -51,7 +51,7 @@ const Header = ({ className, ...rest }) => {
             to="/app"
             component={RouterLink}
           >
-            Dashboard
+            App
           </Link>
           <Link
             variant="body1"
@@ -59,50 +59,15 @@ const Header = ({ className, ...rest }) => {
             to="/app/management"
             component={RouterLink}
           >
-            Management
+            Clientes
           </Link>
-          <Typography
-            variant="body1"
-            color="textPrimary"
-          >
-            Customers
-          </Typography>
         </Breadcrumbs>
         <Typography
           variant="h3"
           color="textPrimary"
         >
-          All Customers
+          Lista de Usuarios
         </Typography>
-        <Box mt={2}>
-          <Button startIcon={
-            <SvgIcon fontSize="small">
-              <UploadIcon />
-            </SvgIcon>
-          }>
-            Import
-          </Button>
-          <Button startIcon={
-            <SvgIcon fontSize="small">
-              <DownloadIcon />
-            </SvgIcon>
-          }>
-            Export
-          </Button>
-        </Box>
-      </Grid>
-      <Grid item>
-        <Button
-          color="secondary"
-          variant="contained"
-          startIcon={
-            <SvgIcon fontSize="small">
-              <PlusCircleIcon />
-            </SvgIcon>
-          }
-        >
-          New Customer
-        </Button>
       </Grid>
     </Grid>
   );

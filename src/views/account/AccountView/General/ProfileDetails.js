@@ -56,25 +56,12 @@ const ProfileDetails = ({ className, user, ...rest }) => {
             color="textPrimary"
             variant="body1"
           >
-            Your tier:
-            {' '}
-            <Link
-              component={RouterLink}
-              to="/pricing"
-            >
-              {user.tier}
-            </Link>
+            Tipo:
+            {user.tier}
+           
           </Typography>
         </Box>
       </CardContent>
-      <CardActions>
-        <Button
-          fullWidth
-          variant="text"
-        >
-          Remove picture
-        </Button>
-      </CardActions>
     </Card>
   );
 };

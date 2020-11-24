@@ -37,19 +37,19 @@ import getInitials from 'src/utils/getInitials';
 const tabs = [
   {
     value: 'all',
-    label: 'All'
+    label: 'Todos'
   },
   {
     value: 'hasAcceptedMarketing',
-    label: 'Accepts Marketing'
+    label: 'Pagado'
   },
   {
     value: 'isProspect',
-    label: 'Prospect'
+    label: 'Sin Pagar'
   },
   {
     value: 'isReturning',
-    label: 'Returning'
+    label: 'Completados'
   }
 ];
 
@@ -208,11 +208,6 @@ const Results = ({
     setQuery(event.target.value);
   };
 
-  const handleSortChange = (event) => {
-    event.persist();
-    setSort(event.target.value);
-  };
-
   const handleSelectAllCustomers = (event) => {
     setSelectedCustomers(event.target.checked
       ? customers.map((customer) => customer.id)
@@ -284,29 +279,11 @@ const Results = ({
             )
           }}
           onChange={handleQueryChange}
-          placeholder="Search customers"
+          placeholder="Buscar usuario/cliente"
           value={query}
           variant="outlined"
         />
         <Box flexGrow={1} />
-        <TextField
-          label="Sort By"
-          name="sort"
-          onChange={handleSortChange}
-          select
-          SelectProps={{ native: true }}
-          value={sort}
-          variant="outlined"
-        >
-          {sortOptions.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-            >
-              {option.label}
-            </option>
-          ))}
-        </TextField>
       </Box>
       {enableBulkOperations && (
         <div className={classes.bulkOperations}>
@@ -320,13 +297,13 @@ const Results = ({
               variant="outlined"
               className={classes.bulkAction}
             >
-              Delete
+              Borrar
             </Button>
             <Button
               variant="outlined"
               className={classes.bulkAction}
             >
-              Edit
+              Editar
             </Button>
           </div>
         </div>
@@ -337,26 +314,18 @@ const Results = ({
             <TableHead>
               <TableRow>
                 <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={selectedAllCustomers}
-                    indeterminate={selectedSomeCustomers}
-                    onChange={handleSelectAllCustomers}
-                  />
                 </TableCell>
                 <TableCell>
-                  Name
+                  Nombre
                 </TableCell>
                 <TableCell>
-                  Location
+                  Email
                 </TableCell>
                 <TableCell>
-                  Orders
-                </TableCell>
-                <TableCell>
-                  Spent
+                  Pago
                 </TableCell>
                 <TableCell align="right">
-                  Actions
+                  Acciones
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -424,14 +393,7 @@ const Results = ({
                           <EditIcon />
                         </SvgIcon>
                       </IconButton>
-                      <IconButton
-                        component={RouterLink}
-                        to="/app/management/customers/1"
-                      >
-                        <SvgIcon fontSize="small">
-                          <ArrowRightIcon />
-                        </SvgIcon>
-                      </IconButton>
+                      
                     </TableCell>
                   </TableRow>
                 );

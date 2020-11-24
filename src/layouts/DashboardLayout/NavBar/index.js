@@ -17,7 +17,8 @@ import {
   makeStyles
 } from '@material-ui/core';
 import {
-  PieChart as PieChartIcon
+  PieChart as PieChartIcon,
+  Users as UsersIcon
 } from 'react-feather';
 import Logo from 'src/components/Logo';
 import useAuth from 'src/hooks/useAuth';
@@ -31,6 +32,20 @@ const sections = [
         title: 'Dashboard',
         icon: PieChartIcon,
         href: '/app/reports/dashboard'
+      }
+    ]
+  }
+];
+
+const sections_admin = [
+  {
+    subheader: 'Administracion',
+    items: [
+      {
+        title: 'Usuarios',
+        icon: UsersIcon,
+        href: '/app/management/customers',
+        role: 'admin'
       }
     ]
   }
@@ -198,6 +213,26 @@ const NavBar = ({ onMobileClose, openMobile }) => {
               })}
             </List>
           ))}
+
+          { user.role == 'admin' && sections_admin.map((section) => (
+            <List
+              key={section.subheader}
+              subheader={(
+                <ListSubheader
+                  disableGutters
+                  disableSticky
+                >
+                  {section.subheader}
+                </ListSubheader>
+              )}
+            >
+              {renderNavItems({
+                items: section.items,
+                pathname: location.pathname
+              })}
+            </List>
+          ))}
+
         </Box>
       </PerfectScrollbar>
     </Box>

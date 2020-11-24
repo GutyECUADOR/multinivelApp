@@ -47,7 +47,7 @@ const CustomerListView = () => {
   return (
     <Page
       className={classes.root}
-      title="Customer List"
+      title="Lista de Clientes/Usuarios"
     >
       <Container maxWidth={false}>
         <Header />

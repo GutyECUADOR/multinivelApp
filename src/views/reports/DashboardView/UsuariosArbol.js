@@ -11,7 +11,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-
+import useAuth from 'src/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -23,19 +23,20 @@ const useStyles = makeStyles((theme) => ({
 
 
 const UsuariosArbol = ({ className, ...rest }) => {
-  const classes = useStyles();
 
+  const { user } = useAuth();
+  const classes = useStyles();
   const [usuariosList, setUsuarios] = useState([]);
 
   const consultarAPI = async () => {
-    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=1`)
+    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=${user.id}`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
   }
   
   useEffect( () => {
     consultarAPI();
-  }, []); 
+  }); 
 
   return (
     <Card
@@ -61,7 +62,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
         {usuariosList.map((usuario, index) => (
           <ListItem
             divider
-            key={usuario.pathname}
+            key={index}
           >
             <ListItemText
               primary={index+1 + '. ' + usuario.username}

@@ -79,7 +79,7 @@ const Security = ({ className, ...rest }) => {
             className={clsx(classes.root, className)}
             {...rest}
           >
-            <CardHeader title="Change Password" />
+            <CardHeader title="Cambiar password" />
             <Divider />
             <CardContent>
               <Grid
@@ -115,7 +115,7 @@ const Security = ({ className, ...rest }) => {
                     error={Boolean(touched.passwordConfirm && errors.passwordConfirm)}
                     fullWidth
                     helperText={touched.passwordConfirm && errors.passwordConfirm}
-                    label="Password Confirmation"
+                    label="Confirmar Password"
                     name="passwordConfirm"
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -145,7 +145,7 @@ const Security = ({ className, ...rest }) => {
                 type="submit"
                 variant="contained"
               >
-                Change Password
+                Guardar
               </Button>
             </Box>
           </Card>

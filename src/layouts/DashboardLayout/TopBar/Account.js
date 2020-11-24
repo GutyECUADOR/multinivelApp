@@ -94,9 +94,9 @@ const Account = () => {
       >
         <MenuItem
           component={RouterLink}
-          to="/app/social/profile"
+          to="/app/account"
         >
-          Perfil
+          Mi Perfil
         </MenuItem>
         <MenuItem onClick={handleLogout}>
           Cerrar Sesion
