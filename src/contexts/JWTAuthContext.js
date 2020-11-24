@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     
-    const response = await axios.post('http://localhost/multinivel/index.php?action=getToken', { email, password });
+    const response = await axios.post(`${process.env.REACT_APP_URL}/index.php?action=getToken`, { email, password });
     const { accessToken, user } = response.data;
 
     console.log(response.data);
@@ -110,7 +110,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (email, name, password) => {
-    const response = await axios.post('http://localhost/multinivel/index.php?action=registerUser', {
+    const response = await axios.post(`${process.env.REACT_APP_URL}/index.php?action=registerUser`, {
       email,
       name,
       password
@@ -135,7 +135,7 @@ export const AuthProvider = ({ children }) => {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('http://localhost/multinivel/index.php?action=getInfoUsuario');
+          const response = await axios.get(`${process.env.REACT_APP_URL}/index.php?action=getInfoUsuario`);
           const { user } = response.data;
 
           dispatch({

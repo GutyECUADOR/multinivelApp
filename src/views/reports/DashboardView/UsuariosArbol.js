@@ -25,25 +25,10 @@ const useStyles = makeStyles((theme) => ({
 const UsuariosArbol = ({ className, ...rest }) => {
   const classes = useStyles();
 
-  /* const usuariosList = [
-    {
-      pathname: 'Guty José'
-    },
-    {
-      pathname: 'Capvan Carlos'
-    },
-    {
-      pathname: 'Ester Cueva'
-    },
-    {
-      pathname: 'Mario Ortega'
-    }
-  ]; */
-
   const [usuariosList, setUsuarios] = useState([]);
 
   const consultarAPI = async () => {
-    fetch('http://localhost/multinivel/index.php?action=getArbol&id=1')
+    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=1`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
   }
