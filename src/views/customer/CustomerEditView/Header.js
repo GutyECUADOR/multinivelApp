@@ -32,7 +32,7 @@ const Header = ({ className, ...rest }) => {
           to="/app"
           component={RouterLink}
         >
-          Dashboard
+          App
         </Link>
         <Link
           variant="body1"
@@ -40,20 +40,20 @@ const Header = ({ className, ...rest }) => {
           to="/app/management"
           component={RouterLink}
         >
-          Management
+          Usuarios
         </Link>
         <Typography
           variant="body1"
           color="textPrimary"
         >
-          Customers
+          Usuarios/Clientes
         </Typography>
       </Breadcrumbs>
       <Typography
         variant="h3"
         color="textPrimary"
       >
-        Edit Customer
+        Editar Usuario
       </Typography>
     </div>
   );

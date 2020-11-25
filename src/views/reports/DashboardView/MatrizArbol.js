@@ -29,7 +29,7 @@ const PerformanceOverTime = ({ className, ...rest }) => {
       {...rest}
     >
       <CardHeader
-        action={<GenericMoreButton />}
+       
         title="Arbol Principal"
       />
       <Divider />
