@@ -134,78 +134,6 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.phone && errors.phone)}
-                    fullWidth
-                    helperText={touched.phone && errors.phone}
-                    label="Phone Number"
-                    name="phone"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.phone}
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <Autocomplete
-                    getOptionLabel={(option) => option.text}
-                    options={countries}
-                    renderInput={(params) => (
-                      <TextField
-                        fullWidth
-                        label="Country"
-                        name="country"
-                        onChange={handleChange}
-                        variant="outlined"
-                        {...params}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.state && errors.state)}
-                    fullWidth
-                    helperText={touched.state && errors.state}
-                    label="State/Region"
-                    name="state"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.state}
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.city && errors.city)}
-                    fullWidth
-                    helperText={touched.city && errors.city}
-                    label="City"
-                    name="city"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.city}
-                    variant="outlined"
-                  />
-                </Grid>
-                
               </Grid>
               {errors.submit && (
                 <Box mt={3}>
@@ -226,6 +154,7 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                 disabled={isSubmitting}
                 type="submit"
                 variant="contained"
+                disabled
               >
                 Guardar
               </Button>
