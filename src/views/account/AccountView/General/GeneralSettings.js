@@ -13,14 +13,10 @@ import {
   Divider,
   FormHelperText,
   Grid,
-  Switch,
   TextField,
-  Typography,
   makeStyles
 } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import wait from 'src/utils/wait';
-import countries from './countries';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -154,7 +150,6 @@ const GeneralSettings = ({ className, user, ...rest }) => {
                 disabled={isSubmitting}
                 type="submit"
                 variant="contained"
-                disabled
               >
                 Guardar
               </Button>
