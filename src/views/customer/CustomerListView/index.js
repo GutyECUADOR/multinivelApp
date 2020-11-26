@@ -29,11 +29,13 @@ const CustomerListView = () => {
 
   const getCustomers = useCallback(async () => {
     try {
-      const response = await axios.get('/api/customers');
-
-      if (isMountedRef.current) {
-        setCustomers(response.data.customers);
-      }
+      fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuarios`)
+      .then(response => response.json())
+      .then(data => {
+        if (isMountedRef.current) {
+          setCustomers(data);
+        }
+      });
     } catch (err) {
       console.error(err);
     }

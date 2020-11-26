@@ -64,9 +64,8 @@ const CustomerEditForm = ({
           resetForm();
           setStatus({ success: true });
           setSubmitting(false);
-          enqueueSnackbar('Customer updated', {
-            variant: 'success',
-            action: <Button>See all</Button>
+          enqueueSnackbar('Informacion Actualizada', {
+            variant: 'success'
           });
         } catch (err) {
           console.error(err);
@@ -105,7 +104,7 @@ const CustomerEditForm = ({
                     error={Boolean(touched.name && errors.name)}
                     fullWidth
                     helperText={touched.name && errors.name}
-                    label="Full name"
+                    label="Nombre"
                     name="name"
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -123,7 +122,7 @@ const CustomerEditForm = ({
                     error={Boolean(touched.email && errors.email)}
                     fullWidth
                     helperText={touched.email && errors.email}
-                    label="Email address"
+                    label="Email"
                     name="email"
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -141,7 +140,7 @@ const CustomerEditForm = ({
                     error={Boolean(touched.country && errors.country)}
                     fullWidth
                     helperText={touched.country && errors.country}
-                    label="Country"
+                    label="Pais"
                     name="country"
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -217,60 +216,6 @@ const CustomerEditForm = ({
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item />
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <Typography
-                    variant="h5"
-                    color="textPrimary"
-                  >
-                    Email Verified
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                  >
-                    Disabling this will automatically send the user a verification
-                    email
-                  </Typography>
-                  <Switch
-                    checked={values.isVerified}
-                    color="secondary"
-                    edge="start"
-                    name="isVerified"
-                    onChange={handleChange}
-                    value={values.isVerified}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <Typography
-                    variant="h5"
-                    color="textPrimary"
-                  >
-                    Discounted Prices
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                  >
-                    This will give the user discounted prices for all products
-                  </Typography>
-                  <Switch
-                    checked={values.hasDiscountedPrices}
-                    color="secondary"
-                    edge="start"
-                    name="hasDiscountedPrices"
-                    onChange={handleChange}
-                    value={values.hasDiscountedPrices}
-                  />
-                </Grid>
               </Grid>
               <Box mt={2}>
                 <Button
@@ -279,7 +224,7 @@ const CustomerEditForm = ({
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Update Customer
+                  Actualizar información
                 </Button>
               </Box>
             </CardContent>
