@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
+import numeral from 'numeral';
 import PropTypes from 'prop-types';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
@@ -12,6 +13,7 @@ import {
   Divider,
   IconButton,
   InputAdornment,
+  Link,
   SvgIcon,
   Tab,
   Table,
@@ -27,6 +29,7 @@ import {
 } from '@material-ui/core';
 import {
   Edit as EditIcon,
+  ArrowRight as ArrowRightIcon,
   Search as SearchIcon
 } from 'react-feather';
 import getInitials from 'src/utils/getInitials';
@@ -47,6 +50,25 @@ const tabs = [
   {
     value: 'isReturning',
     label: 'Completados'
+  }
+];
+
+const sortOptions = [
+  {
+    value: 'updatedAt|desc',
+    label: 'Last update (newest first)'
+  },
+  {
+    value: 'updatedAt|asc',
+    label: 'Last update (oldest first)'
+  },
+  {
+    value: 'orders|desc',
+    label: 'Total orders (high to low)'
+  },
+  {
+    value: 'orders|asc',
+    label: 'Total orders (low to high)'
   }
 ];
 
@@ -83,6 +105,40 @@ const applyFilters = (customers, query, filters) => {
 
 const applyPagination = (customers, page, limit) => {
   return customers.slice(page * limit, page * limit + limit);
+};
+
+const descendingComparator = (a, b, orderBy) => {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+
+  return 0;
+};
+
+const getComparator = (order, orderBy) => {
+  return order === 'desc'
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy);
+};
+
+const applySort = (customers, sort) => {
+  const [orderBy, order] = sort.split('|');
+  const comparator = getComparator(order, orderBy);
+  const stabilizedThis = customers.map((el, index) => [el, index]);
+
+  stabilizedThis.sort((a, b) => {
+    const order = comparator(a[0], b[0]);
+
+    if (order !== 0) return order;
+
+    return a[1] - b[1];
+  });
+
+  return stabilizedThis.map((el) => el[0]);
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -123,6 +179,7 @@ const Results = ({
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(10);
   const [query, setQuery] = useState('');
+  const [sort, setSort] = useState(sortOptions[0].value);
   const [filters, setFilters] = useState({
     hasAcceptedMarketing: null,
     isProspect: null,
@@ -157,6 +214,14 @@ const Results = ({
       : []);
   };
 
+  const handleSelectOneCustomer = (event, customerId) => {
+    if (!selectedCustomers.includes(customerId)) {
+      setSelectedCustomers((prevSelected) => [...prevSelected, customerId]);
+    } else {
+      setSelectedCustomers((prevSelected) => prevSelected.filter((id) => id !== customerId));
+    }
+  };
+
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
@@ -166,7 +231,8 @@ const Results = ({
   };
 
   const filteredCustomers = applyFilters(customers, query, filters);
-  const paginatedCustomers = applyPagination(filteredCustomers, page, limit);
+  const sortedCustomers = applySort(filteredCustomers, sort);
+  const paginatedCustomers = applyPagination(sortedCustomers, page, limit);
   const enableBulkOperations = selectedCustomers.length > 0;
   const selectedSomeCustomers = selectedCustomers.length > 0 && selectedCustomers.length < customers.length;
   const selectedAllCustomers = selectedCustomers.length === customers.length;
