@@ -10,6 +10,7 @@ import {
   Divider,
   makeStyles
 } from '@material-ui/core';
+import GenericMoreButton from 'src/components/GenericMoreButton';
 import Arbol from './Arbol';
 
 const useStyles = makeStyles(() => ({
@@ -19,7 +20,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const MatrizArbol = ({ className, ...rest }) => {
+const PerformanceOverTime = ({ className, ...rest }) => {
   const classes = useStyles();
  
   return (
@@ -28,6 +29,7 @@ const MatrizArbol = ({ className, ...rest }) => {
       {...rest}
     >
       <CardHeader
+        action={<GenericMoreButton />}
         title="Arbol Principal"
       />
       <Divider />
@@ -45,8 +47,8 @@ const MatrizArbol = ({ className, ...rest }) => {
   );
 };
 
-MatrizArbol.propTypes = {
+PerformanceOverTime.propTypes = {
   className: PropTypes.string
 };
 
-export default MatrizArbol;
+export default PerformanceOverTime;
