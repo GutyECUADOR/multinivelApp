@@ -313,7 +313,8 @@ const Results = ({
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell padding="checkbox">
+                <TableCell>
+                  ID
                 </TableCell>
                 <TableCell>
                   Nombre
@@ -339,12 +340,8 @@ const Results = ({
                     key={customer.id}
                     selected={isCustomerSelected}
                   >
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        checked={isCustomerSelected}
-                        onChange={(event) => handleSelectOneCustomer(event, customer.id)}
-                        value={isCustomerSelected}
-                      />
+                     <TableCell>
+                      {customer.id}
                     </TableCell>
                     <TableCell>
                       <Box
@@ -357,15 +354,8 @@ const Results = ({
                         >
                           {getInitials(customer.name)}
                         </Avatar>
-                        <div>
-                          <Link
-                            color="inherit"
-                            component={RouterLink}
-                            to="/app/management/customers/1"
-                            variant="h6"
-                          >
-                            {customer.name}
-                          </Link>
+                          <div>
+                          {customer.name}
                           <Typography
                             variant="body2"
                             color="textSecondary"
@@ -376,13 +366,10 @@ const Results = ({
                       </Box>
                     </TableCell>
                     <TableCell>
-                      {`${customer.city}, ${customer.state}, ${customer.country}`}
+                      {customer.role}
                     </TableCell>
                     <TableCell>
-                      {customer.totalOrders}
-                    </TableCell>
-                    <TableCell>
-                      {numeral(customer.totalAmountSpent).format(`${customer.currency}0,0.00`)}
+                      {customer.tier}
                     </TableCell>
                     <TableCell align="right">
                       <IconButton
