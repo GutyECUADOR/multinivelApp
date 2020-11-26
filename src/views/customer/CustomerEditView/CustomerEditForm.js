@@ -10,9 +10,7 @@ import {
   Card,
   CardContent,
   Grid,
-  Switch,
   TextField,
-  Typography,
   makeStyles
 } from '@material-ui/core';
 import wait from 'src/utils/wait';

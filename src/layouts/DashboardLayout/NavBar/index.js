@@ -214,7 +214,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             </List>
           ))}
 
-          { user.role == 'admin' && sections_admin.map((section) => (
+          { user.role === 'admin' && sections_admin.map((section) => (
             <List
               key={section.subheader}
               subheader={(

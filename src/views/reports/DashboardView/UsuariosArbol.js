@@ -11,7 +11,6 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import useAuth from 'src/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -24,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 
 const UsuariosArbol = ({ className, ...rest }) => {
 
-  const { user } = useAuth();
   const classes = useStyles();
   const [usuariosList, setUsuarios] = useState([]);
 

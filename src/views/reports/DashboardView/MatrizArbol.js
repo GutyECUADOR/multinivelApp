@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
@@ -7,27 +6,14 @@ import {
   Card,
   CardHeader,
   CardContent,
-  Divider,
-  makeStyles
+  Divider
 } from '@material-ui/core';
-import GenericMoreButton from 'src/components/GenericMoreButton';
 import Arbol from './Arbol';
 
-const useStyles = makeStyles(() => ({
-  root: {},
-  chart: {
-    height: '100%'
-  }
-}));
-
-const PerformanceOverTime = ({ className, ...rest }) => {
-  const classes = useStyles();
- 
+const MatrizArbol = () => {
+  
   return (
-    <Card
-      className={clsx(classes.root, className)}
-      {...rest}
-    >
+    <Card>
       <CardHeader
         action={<GenericMoreButton />}
         title="Arbol Principal"
@@ -35,20 +21,15 @@ const PerformanceOverTime = ({ className, ...rest }) => {
       <Divider />
       <CardContent>
         <PerfectScrollbar>
-          <Box
-            height={500}
-            minWidth={500}
-          >
             <Arbol/>
-          </Box>
         </PerfectScrollbar>
       </CardContent>
     </Card>
   );
 };
 
-PerformanceOverTime.propTypes = {
+MatrizArbol.propTypes = {
   className: PropTypes.string
 };
 
-export default PerformanceOverTime;
+export default MatrizArbol;
