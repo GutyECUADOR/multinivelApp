@@ -15,7 +15,7 @@ const MatrizArbol = () => {
   return (
     <Card>
       <CardHeader
-       
+        action={<GenericMoreButton />}
         title="Arbol Principal"
       />
       <Divider />

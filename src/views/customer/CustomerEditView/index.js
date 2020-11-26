@@ -29,13 +29,11 @@ const CustomerEditView = () => {
 
   const getCustomer = useCallback(async () => {
     try {
-      fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuarioByID&id=1`)
-      .then(response => response.json())
-      .then(data => {
-        if (isMountedRef.current) {
-          setCustomer(data);
-        }
-      });
+      const response = await axios.get('/api/customers/1');
+    
+      if (isMountedRef.current) {
+        setCustomer(response.data.customer);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -52,7 +50,7 @@ const CustomerEditView = () => {
   return (
     <Page
       className={classes.root}
-      title="Edicion de Cliente/Usuario"
+      title="Customer Edit"
     >
       <Container maxWidth={false}>
         <Header />
