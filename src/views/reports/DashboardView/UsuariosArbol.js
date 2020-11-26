@@ -29,7 +29,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
   const [usuariosList, setUsuarios] = useState([]);
 
   const consultarAPI = async () => {
-    fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuariosPago`)
+    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=${user.id}`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
   }
@@ -65,7 +65,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
             key={index}
           >
             <ListItemText
-              primary={index+1 + '. ' + usuario.name}
+              primary={index+1 + '. ' + usuario.username}
               primaryTypographyProps={{ color: 'textSecondary', variant: 'body2' }}
             />
           </ListItem>
