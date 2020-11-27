@@ -308,7 +308,8 @@ const Results = ({
                     <TableCell align="right">
                       <IconButton
                         component={RouterLink}
-                        to="/app/management/customers/1/edit"
+                        to={`/app/management/customers/${customer.id}/edit`}
+                        
                       >
                         <SvgIcon fontSize="small">
                           <EditIcon />

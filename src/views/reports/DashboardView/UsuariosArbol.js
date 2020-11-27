@@ -26,7 +26,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
   const classes = useStyles();
   const [usuariosList, setUsuarios] = useState([]);
 
-  const consultarAPI = async () => {
+  const consultarAPI = () => {
     fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuariosPago`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
@@ -34,7 +34,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
   
   useEffect( () => {
     consultarAPI();
-  }); 
+  },[]); 
 
   return (
     <Card

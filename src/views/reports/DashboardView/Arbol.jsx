@@ -7,7 +7,7 @@ const Arbol = () => {
   const { user } = useAuth();
   const [usuarios, setUsuarios] = useState([]);
 
-  const consultarAPI = async () => {
+  const consultarAPI = () => {
     fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=${user.id}`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
@@ -15,7 +15,7 @@ const Arbol = () => {
   
   useEffect( () => {
     consultarAPI();
-  }); 
+  },[]); 
 
   return(
     <Fragment>
