@@ -16,7 +16,7 @@ const Arbol = () => {
   
   useEffect( () => {
     consultarAPI();
-  }); 
+  },[]); 
 
   return(
     <Fragment>

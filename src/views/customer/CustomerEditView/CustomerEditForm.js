@@ -79,9 +79,16 @@ const CustomerEditForm = ({
             resetForm();
             setStatus({ success: true });
             setSubmitting(false);
-            enqueueSnackbar('Informacion Actualizada', {
-              variant: 'success'
-            });
+            if (data.commit === 1) {
+              enqueueSnackbar('Informacion Actualizada', {
+                variant: 'success'
+              });
+            }else{
+              enqueueSnackbar('Hubo un error al actualizar. ' + data.message, {
+                variant: 'error'
+              });
+            }
+           
           }).catch(error => {
               console.error(error);
           });
@@ -182,6 +189,7 @@ const CustomerEditForm = ({
                     SelectProps={{ native: true }}
                     value={values.tier}
                     variant="outlined"
+                    disabled={values.tier === 'Pagado'}
                   >
                     {categories.map((category) => (
                       <option

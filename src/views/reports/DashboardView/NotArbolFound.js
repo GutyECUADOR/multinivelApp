@@ -75,8 +75,6 @@ const NotArbolFound = ({ className, ...rest }) => {
           
         </Grid>
        
-        
-        
       </Grid>
     </div>
   );
