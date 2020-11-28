@@ -1,7 +1,7 @@
 {
-  "name": "@devias-io/material-kit-pro-react",
-  "author": "DeviasIO",
-  "licence": "UNLICENSED",
+  "name": "multinivelapp",
+  "author": "Gutiérrez R. José",
+  "licence": "MIT",
   "version": "3.1.0",
   "private": true,
   "scripts": {
