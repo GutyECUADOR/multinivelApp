@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 import useAuth from 'src/hooks/useAuth';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -131,8 +132,8 @@ const JWTRegister = ({ className, ...rest }) => {
               Acepto todos los 
               {' '}
               <Link
-                component="a"
-                href="/terminosCondiciones"
+                component={RouterLink}
+                to="/terminosCondiciones"
                 color="secondary"
               >
                 Terminos & Condiciones
