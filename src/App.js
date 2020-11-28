@@ -13,8 +13,6 @@ import {
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import GlobalStyles from 'src/components/GlobalStyles';
 import ScrollReset from 'src/components/ScrollReset';
-import CookiesNotification from 'src/components/CookiesNotification';
-import GoogleAnalytics from 'src/components/GoogleAnalytics';
 import { AuthProvider } from 'src/contexts/JWTAuthContext';
 import useSettings from 'src/hooks/useSettings';
 import { createTheme } from 'src/theme';
@@ -44,8 +42,6 @@ const App = () => {
               <AuthProvider>
                 <GlobalStyles />
                 <ScrollReset />
-                <GoogleAnalytics />
-                <CookiesNotification />
                 {renderRoutes(routes)}
               </AuthProvider>
             </Router>
