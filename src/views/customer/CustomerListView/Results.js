@@ -9,18 +9,15 @@ import {
   Button,
   Card,
   Checkbox,
-  Divider,
   IconButton,
   InputAdornment,
   SvgIcon,
-  Tab,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TablePagination,
   TableRow,
-  Tabs,
   TextField,
   Typography,
   makeStyles
@@ -30,25 +27,6 @@ import {
   Search as SearchIcon
 } from 'react-feather';
 import getInitials from 'src/utils/getInitials';
-
-const tabs = [
-  {
-    value: 'all',
-    label: 'Todos'
-  },
-  {
-    value: 'hasAcceptedMarketing',
-    label: 'Pagado'
-  },
-  {
-    value: 'isProspect',
-    label: 'Sin Pagar'
-  },
-  {
-    value: 'isReturning',
-    label: 'Completados'
-  }
-];
 
 const applyFilters = (customers, query, filters) => {
   return customers.filter((customer) => {
@@ -118,33 +96,15 @@ const Results = ({
   ...rest
 }) => {
   const classes = useStyles();
-  const [currentTab, setCurrentTab] = useState('all');
   const [selectedCustomers, setSelectedCustomers] = useState([]);
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(10);
   const [query, setQuery] = useState('');
-  const [filters, setFilters] = useState({
+  const [filters] = useState({
     hasAcceptedMarketing: null,
     isProspect: null,
     isReturning: null
   });
-
-  const handleTabsChange = (event, value) => {
-    const updatedFilters = {
-      ...filters,
-      hasAcceptedMarketing: null,
-      isProspect: null,
-      isReturning: null
-    };
-
-    if (value !== 'all') {
-      updatedFilters[value] = true;
-    }
-
-    setFilters(updatedFilters);
-    setSelectedCustomers([]);
-    setCurrentTab(value);
-  };
 
   const handleQueryChange = (event) => {
     event.persist();

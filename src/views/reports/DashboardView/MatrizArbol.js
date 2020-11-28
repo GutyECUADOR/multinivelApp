@@ -5,9 +5,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
   Box,
   Card,
-  CardHeader,
   CardContent,
-  Divider,
   makeStyles
 } from '@material-ui/core';
 import Arbol from './Arbol';

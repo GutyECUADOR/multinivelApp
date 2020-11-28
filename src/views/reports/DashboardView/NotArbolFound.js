@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
-  Box,
-  Button,
   Grid,
-  Hidden,
   Typography,
   makeStyles
 } from '@material-ui/core';
-import BarChartIcon from '@material-ui/icons/BarChart';
 import useAuth from 'src/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
@@ -73,7 +69,7 @@ const NotArbolFound = ({ className, ...rest }) => {
               variant="subtitle1"
               color="textPrimary"
             >
-              Realiza tu pago para poder poder estar dentro de un arbol
+              Realiza tu pago para poder estar dentro de un arbol
             </Typography>
           </Grid>
           

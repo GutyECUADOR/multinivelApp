@@ -16,7 +16,7 @@ const Arbol = () => {
   
   useEffect( () => {
     consultarAPI();
-  },[]); 
+  }); 
 
   return(
     <Fragment>
@@ -39,7 +39,7 @@ const Arbol = () => {
           />
           }
 
-      { usuarios.length ==0 &&
+      { usuarios.length === 0 &&
         <>
         <NotArbolFound/>
         </>

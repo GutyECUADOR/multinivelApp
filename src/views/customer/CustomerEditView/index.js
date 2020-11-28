@@ -1,6 +1,5 @@
 import React, {
   useState,
-  useCallback,
   useEffect
 } from 'react';
 import {
@@ -29,7 +28,7 @@ const CustomerEditView = () => {
   const isMountedRef = useIsMountedRef();
   const [customer, setCustomer] = useState(null);
 
-  const getCustomer = useCallback(async () => {
+  const getCustomer = (async () => {
     try {
       fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuarioByID&id=${customerId}`)
       .then(response => response.json())
@@ -41,11 +40,11 @@ const CustomerEditView = () => {
     } catch (err) {
       console.error(err);
     }
-  }, [isMountedRef]);
+  });
 
   useEffect(() => {
     getCustomer();
-  }, [getCustomer]);
+  });
 
   if (!customer) {
     return null;

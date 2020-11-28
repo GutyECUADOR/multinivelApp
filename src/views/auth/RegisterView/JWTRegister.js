@@ -132,7 +132,7 @@ const JWTRegister = ({ className, ...rest }) => {
               {' '}
               <Link
                 component="a"
-                href="#"
+                href="/terminosCondiciones"
                 color="secondary"
               >
                 Terminos & Condiciones
