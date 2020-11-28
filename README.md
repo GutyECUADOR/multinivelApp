@@ -13,25 +13,18 @@ The page will automatically reload if you make changes to the code.<br>
 You will see the build errors and lint warnings in the console.
 
 <p align='center'>
-<img src='https://cdn.jsdelivr.net/gh/marionebl/create-react-app@9f6282671c54f0874afd37a72f6689727b562498/screencast-error.svg' width='600' alt='Build errors'>
+![Pantalla de Home](app.png)
 </p>
 
-### `npm test` or `yarn test`
+### `Procedimiento para deploy`
 
-Runs the test watcher in an interactive mode.<br>
-By default, runs tests related to files changed since the last commit.
+<ol>
+    <li>Definir variables de entorno .env de forma correcta, probar con postman si responde API. <strong>REACT_APP_URL=http://localhost/multinivel</strong></li>
+    <li>Borrar el derectorio build y realizar npm run build de nuevo.</li>
+    <li>Revisar en proyecto de backend(multinivel) el require de cada una de las clases</li>
+    <li>Resetear autoincrements de tablas usuarios y arbol con <strong>ALTER TABLE usuarios AUTO_INCREMENT = 1</strong></li>
+    <li>Registrar un primer usuario en la DB con el formulario de registro</li>
+    <li>Insertar manualmente el primer usuario en la tabla arbol</li>
+</ol>
 
-[Read more about testing.](https://facebook.github.io/create-react-app/docs/running-tests)
-
-### `npm run build` or `yarn build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-
-Your app is ready to be deployed.
-
-## User Guide
-
-You can find detailed instructions on using Create React App and many tips in [its documentation](https://facebook.github.io/create-react-app/).
+[Read more about this template.](https://material-ui.com/store/items/devias-kit-pro/)
