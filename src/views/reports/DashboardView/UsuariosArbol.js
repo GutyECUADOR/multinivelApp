@@ -11,6 +11,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
+import useAuth from 'src/hooks/useAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -25,9 +26,10 @@ const UsuariosArbol = ({ className, ...rest }) => {
 
   const classes = useStyles();
   const [usuariosList, setUsuarios] = useState([]);
+  const { user } = useAuth();
 
   const consultarAPI = () => {
-    fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuariosPago`)
+    fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuariosPago&id=${user.arbol}`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
   }
@@ -51,7 +53,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
           </Typography>
         )}
         classes={{ action: classes.current }}
-        subheader="Usuarios con el pago realizado"
+        subheader="Usuarios con el pago realizado en este arbol"
         subheaderTypographyProps={{ color: 'textSecondary', variant: 'body2' }}
         title="Usuarios"
         titleTypographyProps={{ color: 'textPrimary' }}

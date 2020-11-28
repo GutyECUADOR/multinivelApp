@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import BinaryTree from "family-binary-tree";
 import useAuth from 'src/hooks/useAuth';
+import NotArbolFound from './NotArbolFound';
 
 const Arbol = () => {
   
@@ -8,7 +9,7 @@ const Arbol = () => {
   const [usuarios, setUsuarios] = useState([]);
 
   const consultarAPI = () => {
-    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=${user.id}`)
+    fetch(`${process.env.REACT_APP_URL}/index.php?action=getArbol&id=${user.arbol}`)
     .then(response => response.json())
     .then(data => setUsuarios( data ));
   }
@@ -37,6 +38,12 @@ const Arbol = () => {
               }} */
           />
           }
+
+      { usuarios.length ==0 &&
+        <>
+        <NotArbolFound/>
+        </>
+        }
           
     </Fragment>)
     
