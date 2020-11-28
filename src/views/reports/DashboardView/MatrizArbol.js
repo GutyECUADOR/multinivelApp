@@ -30,7 +30,7 @@ const PerformanceOverTime = ({ className, ...rest }) => {
       <CardContent>
         <PerfectScrollbar>
           <Box
-            height={375}
+            height={700}
             minWidth={500}
           >
             <Arbol />

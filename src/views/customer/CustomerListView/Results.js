@@ -176,22 +176,7 @@ const Results = ({
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <Tabs
-        onChange={handleTabsChange}
-        scrollButtons="auto"
-        textColor="secondary"
-        value={currentTab}
-        variant="scrollable"
-      >
-        {tabs.map((tab) => (
-          <Tab
-            key={tab.value}
-            value={tab.value}
-            label={tab.label}
-          />
-        ))}
-      </Tabs>
-      <Divider />
+      
       <Box
         p={2}
         minHeight={56}

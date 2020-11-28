@@ -15,6 +15,17 @@ import {
 } from '@material-ui/core';
 import wait from 'src/utils/wait';
 
+const categories = [
+  {
+    id: 'Pagado',
+    name: 'Pagado'
+  },
+  {
+    id: 'Sin Pago',
+    name: 'Sin Pago'
+  }
+];
+
 const useStyles = makeStyles(() => ({
   root: {}
 }));
@@ -30,27 +41,18 @@ const CustomerEditForm = ({
   return (
     <Formik
       initialValues={{
-        address1: customer.address1 || '',
-        address2: customer.address2 || '',
         country: customer.country || '',
         email: customer.email || '',
-        hasDiscountedPrices: customer.hasDiscountedPrices || false,
-        isVerified: customer.isVerified || false,
         name: customer.name || '',
-        phone: customer.phone || '',
-        state: customer.state || '',
+        tier: customer.tier || 0,
         submit: null
       }}
       validationSchema={Yup.object().shape({
-        address1: Yup.string().max(255),
-        address2: Yup.string().max(255),
         country: Yup.string().max(255),
-        email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-        hasDiscountedPrices: Yup.bool(),
-        isVerified: Yup.bool(),
-        name: Yup.string().max(255).required('Name is required'),
-        phone: Yup.string().max(15),
-        state: Yup.string().max(255)
+        email: Yup.string().email('Debe ser un email válido').max(255).required('Email es requerido'),
+        name: Yup.string().max(255).required('El nombre es requerido'),
+        tier: Yup.string().max(10),
+       
       })}
       onSubmit={async (values, {
         resetForm,
@@ -60,6 +62,7 @@ const CustomerEditForm = ({
       }) => {
         try {
           // NOTE: Make API request
+          console.log(values);
           await wait(500);
           resetForm();
           setStatus({ success: true });
@@ -154,67 +157,24 @@ const CustomerEditForm = ({
                   xs={12}
                 >
                   <TextField
-                    error={Boolean(touched.state && errors.state)}
                     fullWidth
-                    helperText={touched.state && errors.state}
-                    label="State/Region"
-                    name="state"
-                    onBlur={handleBlur}
+                    label="Pago"
+                    name="tier"
                     onChange={handleChange}
-                    value={values.state}
+                    select
+                    SelectProps={{ native: true }}
+                    value={values.category}
                     variant="outlined"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.address1 && errors.address1)}
-                    fullWidth
-                    helperText={touched.address1 && errors.address1}
-                    label="Address 1"
-                    name="address1"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.address1}
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.address2 && errors.address2)}
-                    fullWidth
-                    helperText={touched.address2 && errors.address2}
-                    label="Address 2"
-                    name="address2"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.address2}
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  md={6}
-                  xs={12}
-                >
-                  <TextField
-                    error={Boolean(touched.phone && errors.phone)}
-                    fullWidth
-                    helperText={touched.phone && errors.phone}
-                    label="Phone number"
-                    name="phone"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={values.phone}
-                    variant="outlined"
-                  />
+                  >
+                    {categories.map((category) => (
+                      <option
+                        key={category.id}
+                        value={category.id}
+                      >
+                        {category.name}
+                      </option>
+                    ))}
+                  </TextField>
                 </Grid>
               </Grid>
               <Box mt={2}>

@@ -12,6 +12,7 @@ import Page from 'src/components/Page';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import CustomerEditForm from './CustomerEditForm';
 import Header from './Header';
+import { useParams } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,13 +24,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CustomerEditView = () => {
+  const {customerId} = useParams();
   const classes = useStyles();
   const isMountedRef = useIsMountedRef();
   const [customer, setCustomer] = useState(null);
 
   const getCustomer = useCallback(async () => {
     try {
-      fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuarioByID&id=1`)
+      fetch(`${process.env.REACT_APP_URL}/index.php?action=getUsuarioByID&id=${customerId}`)
       .then(response => response.json())
       .then(data => {
         if (isMountedRef.current) {

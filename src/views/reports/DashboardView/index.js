@@ -35,14 +35,14 @@ const DashboardView = () => {
         >
           <Grid
             item
-            lg={3}
+            lg={2}
             xs={12}
           >
             <UsuariosArbol />
           </Grid>
           <Grid
             item
-            lg={9}
+            lg={10}
             xs={12}
           >
             <MatrizArbol />
