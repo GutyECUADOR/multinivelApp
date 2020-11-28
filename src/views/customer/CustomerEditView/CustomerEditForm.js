@@ -13,9 +13,9 @@ import {
   TextField,
   makeStyles
 } from '@material-ui/core';
-import wait from 'src/utils/wait';
 
 const categories = [
+  
   {
     id: 'Pagado',
     name: 'Pagado'
@@ -41,6 +41,7 @@ const CustomerEditForm = ({
   return (
     <Formik
       initialValues={{
+        id: customer.id,
         country: customer.country || '',
         email: customer.email || '',
         name: customer.name || '',
@@ -61,15 +62,31 @@ const CustomerEditForm = ({
         setSubmitting
       }) => {
         try {
-          // NOTE: Make API request
           console.log(values);
-          await wait(500);
-          resetForm();
-          setStatus({ success: true });
-          setSubmitting(false);
-          enqueueSnackbar('Informacion Actualizada', {
-            variant: 'success'
+          let formData = new FormData();
+          formData.append('usuario', JSON.stringify(values));
+
+          fetch(`${process.env.REACT_APP_URL}/index.php?action=updateUsuario`, {
+          method: 'POST',
+          body: formData
+          })
+          .then(response => {
+              return response.json();
+          })
+          .then(data => {
+           
+            console.log(data);
+            resetForm();
+            setStatus({ success: true });
+            setSubmitting(false);
+            enqueueSnackbar('Informacion Actualizada', {
+              variant: 'success'
+            });
+          }).catch(error => {
+              console.error(error);
           });
+
+          
         } catch (err) {
           console.error(err);
           setStatus({ success: false });
@@ -163,7 +180,7 @@ const CustomerEditForm = ({
                     onChange={handleChange}
                     select
                     SelectProps={{ native: true }}
-                    value={values.category}
+                    value={values.tier}
                     variant="outlined"
                   >
                     {categories.map((category) => (
