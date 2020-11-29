@@ -2,6 +2,10 @@ import React, { Fragment, useState, useEffect } from "react";
 import BinaryTree from "family-binary-tree";
 import useAuth from 'src/hooks/useAuth';
 import NotArbolFound from './NotArbolFound';
+import {
+  Box,
+  makeStyles
+} from '@material-ui/core';
 
 const Arbol = () => {
   
@@ -21,29 +25,32 @@ const Arbol = () => {
   return(
     <Fragment>
           { usuarios.length > 0 &&
-          <BinaryTree
-              allUsers={usuarios}
-              rootUser={usuarios[0]}
-              bgSideBar={'#333'}
-              colorText={'#333'}
-              colorSideBar={'#fff'}
-              nameFake={'Sin Usuario'}  
-              bgButton={'blue'}
-              colorButton={'black'}
-              disableNavigation
-              disableSideBar
-              maxDeep={4}
-              /* renderDetail={user => {
-              return null;
-              }} */
-          />
+          <Box
+          height={700}
+          minWidth={500}
+          >
+            <BinaryTree
+                allUsers={usuarios}
+                rootUser={usuarios[0]}
+                bgSideBar={'#333'}
+                colorText={'#333'}
+                colorSideBar={'#fff'}
+                nameFake={'Sin Usuario'}  
+                bgButton={'blue'}
+                colorButton={'black'}
+                disableNavigation
+                disableSideBar
+                maxDeep={4}
+                /* renderDetail={user => {
+                return null;
+                }} */
+            />
+          </Box>
           }
 
       { usuarios.length === 0 &&
-        <>
         <NotArbolFound/>
-        </>
-        }
+      }
           
     </Fragment>)
     

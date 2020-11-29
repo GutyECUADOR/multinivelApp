@@ -11,10 +11,7 @@ import {
 import Arbol from './Arbol';
 
 const useStyles = makeStyles(() => ({
-  root: {},
-  chart: {
-    height: '100%'
-  }
+  root: {}
 }));
 
 const PerformanceOverTime = ({ className, ...rest }) => {
@@ -27,12 +24,7 @@ const PerformanceOverTime = ({ className, ...rest }) => {
     >
       <CardContent>
         <PerfectScrollbar>
-          <Box
-            height={700}
-            minWidth={500}
-          >
             <Arbol />
-          </Box>
         </PerfectScrollbar>
       </CardContent>
     </Card>
