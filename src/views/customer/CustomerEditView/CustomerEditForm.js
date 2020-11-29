@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useSnackbar } from 'notistack';
+import { useHistory } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -36,6 +37,7 @@ const CustomerEditForm = ({
   ...rest
 }) => {
   const classes = useStyles();
+  const history = useHistory();
   const { enqueueSnackbar } = useSnackbar();
 
   return (
@@ -79,10 +81,11 @@ const CustomerEditForm = ({
             resetForm();
             setStatus({ success: true });
             setSubmitting(false);
-            if (data.commit === 1) {
-              enqueueSnackbar('Informacion Actualizada', {
+            if (data.commit == true) {
+              enqueueSnackbar('Informacion Actualizada ' + data.message, {
                 variant: 'success'
               });
+              history.push('/app/management/customers')
             }else{
               enqueueSnackbar('Hubo un error al actualizar. ' + data.message, {
                 variant: 'error'
