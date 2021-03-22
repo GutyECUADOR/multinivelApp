@@ -46,6 +46,7 @@ const CustomerEditForm = ({
         id: customer.id,
         country: customer.country || '',
         email: customer.email || '',
+        referido_id: customer.referido_id || '',
         name: customer.name || '',
         tier: customer.tier || 0,
         submit: null
@@ -140,6 +141,24 @@ const CustomerEditForm = ({
                     onChange={handleChange}
                     required
                     value={values.name}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.name && errors.name)}
+                    fullWidth
+                    helperText={touched.name && errors.name}
+                    label="Codigo Referido"
+                    name="referido_id"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    value={values.referido_id}
                     variant="outlined"
                   />
                 </Grid>
