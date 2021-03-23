@@ -55,7 +55,7 @@ const CustomerEditForm = ({
         country: Yup.string().max(255),
         email: Yup.string().email('Debe ser un email válido').max(255).required('Email es requerido'),
         name: Yup.string().max(255).required('El nombre es requerido'),
-        tier: Yup.string().max(10),
+        tier: Yup.string().max(10)
        
       })}
       onSubmit={async (values, {
