@@ -76,7 +76,7 @@ const Arbol = () => {
                               color="textPrimary"
                               gutterBottom
                             >
-                              José Gutiérrez
+                              { usuarios[0]?.name }
                             </Typography>
                           </Box>
                         </CardContent>
@@ -87,52 +87,346 @@ const Arbol = () => {
 
                 <Grid container justify="center" spacing={5}>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[1]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[2]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                 </Grid>
 
                 <Grid container justify="center" spacing={2}>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[3]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[4]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[5]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[6]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                 </Grid>
 
                 <Grid container justify="center" spacing={1}>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[7]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[8]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                      <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[9]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[10]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[11]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[12]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[13]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                     <Grid item>
-                      <Paper className={classes.paper} />
+                    <Card className={classes.paper}>
+                        <CardContent>
+                          <Box
+                            display="flex"
+                            alignItems="center"
+                            flexDirection="column"
+                            textAlign="center"
+                          >
+                            <Avatar
+                              className={classes.avatar}
+                              src={user.avatar}
+                            />
+                            <Typography
+                              className={classes.name}
+                              color="textPrimary"
+                              gutterBottom
+                            >
+                              { usuarios[14]?.name }
+                            </Typography>
+                          </Box>
+                        </CardContent>
+                      </Card>
                     </Grid>
                 </Grid>
 
@@ -142,7 +436,7 @@ const Arbol = () => {
           </Box>
           }
 
-      { usuarios.length === 0 &&
+      { usuarios.length <= 0 &&
         <NotArbolFound/>
       }
           
