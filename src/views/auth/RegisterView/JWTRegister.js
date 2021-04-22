@@ -31,6 +31,8 @@ const JWTRegister = ({ className, ...rest }) => {
       initialValues={{
         email: '',
         name: '',
+        phone: '',
+        referred: '',
         password: '',
         policy: false,
         submit: null
@@ -38,6 +40,8 @@ const JWTRegister = ({ className, ...rest }) => {
       validationSchema={Yup.object().shape({
         email: Yup.string().email('Ingresa un email válido').max(255).required('El email es requerido'),
         name: Yup.string().max(255).required('El nombre es requerido'),
+        phone: Yup.string().max(13).required('El teléfono es requerido'),
+        referred: Yup.string().max(255).required('El código de referido es requerido'),
         password: Yup.string().min(3).max(255).required('La contraseña es requerida'),
         policy: Yup.boolean().oneOf([true], 'Debes aceptar nuestros terminos & condiciones')
       })}
@@ -86,6 +90,30 @@ const JWTRegister = ({ className, ...rest }) => {
             onBlur={handleBlur}
             onChange={handleChange}
             value={values.name}
+            variant="outlined"
+          />
+          <TextField
+            error={Boolean(touched.phone && errors.phone)}
+            fullWidth
+            helperText={touched.phone && errors.phone}
+            label="Teléfono"
+            margin="normal"
+            name="phone"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={values.phone}
+            variant="outlined"
+          />
+          <TextField
+            error={Boolean(touched.referred && errors.referred)}
+            fullWidth
+            helperText={touched.referred && errors.referred}
+            label="Código de Referifo"
+            margin="normal"
+            name="referred"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={values.referred}
             variant="outlined"
           />
           <TextField
