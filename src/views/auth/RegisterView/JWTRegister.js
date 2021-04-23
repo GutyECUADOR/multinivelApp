@@ -51,7 +51,7 @@ const JWTRegister = ({ className, ...rest }) => {
         setSubmitting
       }) => {
         try {
-          await register(values.email, values.name, values.password);
+          await register(values.email, values.name, values.phone, values.referred ,values.password);
 
           if (isMountedRef.current) {
             setStatus({ success: true });

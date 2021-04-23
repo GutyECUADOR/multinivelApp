@@ -109,10 +109,12 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: 'LOGOUT' });
   };
 
-  const register = async (email, name, password) => {
+  const register = async (email, name, phone, referred, password) => {
     const response = await axios.post(`${process.env.REACT_APP_URL}/index.php?action=registerUser`, {
       email,
       name,
+      phone,
+      referred,
       password
     });
     const { accessToken, user } = response.data;
