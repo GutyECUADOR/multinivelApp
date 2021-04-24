@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import {
+  Tooltip,
+  Button,
   Grid,
   Typography,
   makeStyles
@@ -54,7 +57,7 @@ const NotArbolFound = ({ className, ...rest }) => {
          alignItems="center"
         >
           <Grid
-            
+            className={classes.center}
           >
             <Typography
               variant="h3"
@@ -71,6 +74,19 @@ const NotArbolFound = ({ className, ...rest }) => {
             >
               Realiza tu pago para poder estar dentro de un arbol
             </Typography>
+
+            <Tooltip title="La validación del pago puede durar hasta 24 horas." placement="top">
+              <Button
+                color="primary"
+                variant="contained"
+                href={`${process.env.REACT_APP_PAYMENT_COINBASE}`}
+                target="_blank"
+                startIcon={<AttachMoneyIcon />}
+              >
+                Realizar el pago con Criptomonedas
+              </Button>
+            </Tooltip>
+            
           </Grid>
           
         </Grid>

@@ -4,8 +4,11 @@ import { useLocation, matchPath } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
+
+
 import {
   Avatar,
+  Button,
   Box,
   Divider,
   Drawer,
@@ -189,8 +192,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
               color="textSecondary"
             >
               {user.tier}
-             
             </Typography>
+            
           </Box>
         </Box>
         <Divider />
