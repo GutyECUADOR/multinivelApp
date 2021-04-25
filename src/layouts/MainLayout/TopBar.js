@@ -50,14 +50,12 @@ const TopBar = ({ className, ...rest }) => {
         <RouterLink to="/">
           <Logo className={classes.logo} />
         </RouterLink>
-        <Hidden mdDown>
           <Typography
             variant="h5"
             color="textSecondary"
           >
-            Multinivel APP
+            Global CrowdFunding Group
           </Typography>
-        </Hidden>
         <Box flexGrow={1} />
         <Link
           className={classes.link}

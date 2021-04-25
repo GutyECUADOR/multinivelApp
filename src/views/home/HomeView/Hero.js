@@ -12,7 +12,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
-    paddingTop: 200,
+    paddingTop: 100,
     paddingBottom: 200,
     [theme.breakpoints.down('md')]: {
       paddingTop: 60,
@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1)
   },
   image: {
+    textAlign: 'center',
     perspectiveOrigin: 'left center',
     transformStyle: 'preserve-3d',
     perspective: 1500,
     '& > img': {
       maxWidth: '90%',
       height: 'auto',
-      transform: 'rotateY(-35deg) rotateX(15deg)',
       backfaceVisibility: 'hidden',
       boxShadow: theme.shadows[16]
     }
@@ -43,7 +43,10 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '90%',
       height: 'auto'
     }
-  }
+  },
+  parrafo: {
+    
+  },
 }));
 
 const Hero = ({ className, ...rest }) => {
@@ -70,78 +73,52 @@ const Hero = ({ className, ...rest }) => {
               justifyContent="center"
               height="100%"
             >
-              <Typography
-                variant="overline"
-                color="secondary"
-              >
-                Introducción
-              </Typography>
+             
               <Typography
                 variant="h1"
                 color="textPrimary"
               >
-                Bienvenido
+                Misión
               </Typography>
-              <Box mt={3}>
-                <Typography
-                  variant="body1"
-                  color="textSecondary"
-                >
-                  A professional kit that comes with ready-to-use Material-UI© components
-                  developed with one common goal in mind, help you build faster &amp; beautiful
-                  applications. Each component is fully customizable,
-                  responsive and easy to integrate.
-                </Typography>
-              </Box>
-              <Box mt={3}>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid item>
-                    <Typography
-                      variant="h1"
-                      color="secondary"
-                    >
-                      30+
-                    </Typography>
-                    <Typography
-                      variant="overline"
-                      color="textSecondary"
-                    >
-                      Demo Pages
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      variant="h1"
-                      color="secondary"
-                    >
-                      UX
-                    </Typography>
-                    <Typography
-                      variant="overline"
-                      color="textSecondary"
-                    >
-                      Complete Flows
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      variant="h1"
-                      color="secondary"
-                    >
-                      300+
-                    </Typography>
-                    <Typography
-                      variant="overline"
-                      color="textSecondary"
-                    >
-                      Components
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Box>
+              
+              <Typography
+                variant="body1"
+                color="textSecondary"
+              >
+                El trabajo en equipo es de los mejores comienzos para un gran emprendimiento. Ya que en equipo construiremos el éxito. El cual generara riquezas para todos.
+              </Typography>
+             
+              <Typography
+                variant="h1"
+                color="textPrimary"
+                style={ {marginTop: 20}}
+              >
+                Visión
+              </Typography>
+              
+              <Typography
+                variant="body1"
+                color="textSecondary"
+              >
+                Si buscas resultados distintos, de esta manera encontraras la clave. El éxito consiste en confiar en ti, y nada será imposible. Te ayudaremos a comprender el proceso para alcanzar la cima.
+              </Typography>
+
+              <Typography
+                variant="h1"
+                color="textPrimary"
+                style={ {marginTop: 20}}
+              >
+                Objetivo
+              </Typography>
+              
+              <Typography
+                variant="body1"
+                color="textSecondary"
+              >
+                Siguiendo la estructura, podremos obtener muy buenas recompensas, que se podrán multiplicar para todos.
+              </Typography>
+
+
             </Box>
           </Grid>
           <Grid
@@ -150,16 +127,10 @@ const Hero = ({ className, ...rest }) => {
             md={7}
           >
             <Box position="relative">
-              <div className={classes.shape}>
-                <img
-                  alt="Shapes"
-                  src="/static/home/shapes.svg"
-                />
-              </div>
               <div className={classes.image}>
                 <img
                   alt="Presentation"
-                  src="/static/home/dark-light.png"
+                  src="/static/home/crowdfounding.png"
                 />
               </div>
             </Box>
