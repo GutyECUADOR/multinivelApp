@@ -60,10 +60,7 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
       maxHeight: '100%'
     }
-  },
-  logo: {
-    maxWidth: "250px"
-  },
+  }
 }));
 
 const LoginView = () => {
@@ -85,7 +82,7 @@ const LoginView = () => {
           justifyContent="center"
         >
           <RouterLink to="/">
-            <Logo className={classes.logo} />
+            <Logo />
           </RouterLink>
         </Box>
         <Card>
