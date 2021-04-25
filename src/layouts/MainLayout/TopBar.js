@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     height: 64
   },
   logo: {
+    maxWidth: "100px",
     marginRight: theme.spacing(2)
   },
   link: {

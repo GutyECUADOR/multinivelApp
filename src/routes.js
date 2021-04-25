@@ -108,7 +108,7 @@ const routes = [
     layout: MainLayout,
     routes: [
       {
-        exact: false,
+        exact: true,
         path: '/',
         component: HomeView
       },
