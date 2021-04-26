@@ -3,6 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
+  Button,
   AppBar,
   Box,
   Toolbar,
@@ -66,8 +67,18 @@ const TopBar = ({ className, ...rest }) => {
           underline="none"
           variant="body2"
         >
-          Iniciar Sesion
+          ¿Cómo empiezo?
         </Link>
+        <Button
+          className={classes.link}
+          color="secondary"
+          component={RouterLink}
+          to="/app"
+          underline="none"
+          variant="body2"
+        >
+          Iniciar Sesion
+        </Button>
       </Toolbar>
     </AppBar>
   );

@@ -25,13 +25,13 @@ const JWTLogin = ({ className, ...rest }) => {
   return (
     <Formik
       initialValues={{
-        email: '',
+        username: '',
         password: '',
         submit: null
       }}
       validationSchema={Yup.object().shape({
-        email: Yup.string().email('Debe ser un email valido').max(255).required('El correo es requerido'),
-        password: Yup.string().max(255).required('La contraseña es requerida')
+        username: Yup.string().max(100).required('El nombre de usuario es requerido'),
+        password: Yup.string().max(100).required('La contraseña es requerida')
       })}
       onSubmit={async (values, {
         setErrors,
@@ -39,7 +39,7 @@ const JWTLogin = ({ className, ...rest }) => {
         setSubmitting
       }) => {
         try {
-          await login(values.email, values.password);
+          await login(values.username, values.password);
 
           if (isMountedRef.current) {
             setStatus({ success: true });
@@ -71,16 +71,16 @@ const JWTLogin = ({ className, ...rest }) => {
           {...rest}
         >
           <TextField
-            error={Boolean(touched.email && errors.email)}
+            error={Boolean(touched.username && errors.username)}
             fullWidth
-            helperText={touched.email && errors.email}
-            label="Email"
+            helperText={touched.username && errors.username}
+            label="Usuario"
             margin="normal"
-            name="email"
+            name="username"
             onBlur={handleBlur}
             onChange={handleChange}
-            type="email"
-            value={values.email}
+            type="text"
+            value={values.username}
             variant="outlined"
           />
           <TextField
