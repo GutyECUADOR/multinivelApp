@@ -30,6 +30,7 @@ const JWTRegister = ({ className, ...rest }) => {
     <Formik
       initialValues={{
         email: '',
+        username: '',
         name: '',
         phone: '',
         referred: '',
@@ -39,6 +40,7 @@ const JWTRegister = ({ className, ...rest }) => {
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string().email('Ingresa un email válido').max(255).required('El email es requerido'),
+        username: Yup.string().max(255).required('El nombre de usuario es requerido'),
         name: Yup.string().max(255).required('El nombre es requerido'),
         phone: Yup.string().max(13).required('El teléfono es requerido'),
         referred: Yup.string().max(255).required('El código de referido es requerido'),
@@ -51,7 +53,7 @@ const JWTRegister = ({ className, ...rest }) => {
         setSubmitting
       }) => {
         try {
-          await register(values.email, values.name, values.phone, values.referred ,values.password);
+          await register(values.email, values.username, values.name, values.phone, values.referred ,values.password);
 
           if (isMountedRef.current) {
             setStatus({ success: true });
@@ -80,6 +82,18 @@ const JWTRegister = ({ className, ...rest }) => {
           onSubmit={handleSubmit}
           {...rest}
         >
+          <TextField
+            error={Boolean(touched.username && errors.username)}
+            fullWidth
+            helperText={touched.username && errors.username}
+            label="Nombre de Usuario"
+            margin="normal"
+            name="username"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={values.username}
+            variant="outlined"
+          />
           <TextField
             error={Boolean(touched.name && errors.name)}
             fullWidth

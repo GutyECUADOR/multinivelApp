@@ -52,7 +52,7 @@ const Arbol = () => {
 
   return(
     <Fragment>
-          { usuarios.length > 0 &&
+          { user.tier === 'Pagado' &&
           <Box height={500} minWidth={725}>
             <Grid container className={classes.root} spacing={2}>
               <Grid item xs={12}>
@@ -436,7 +436,7 @@ const Arbol = () => {
           </Box>
           }
 
-      { usuarios.length <= 0 &&
+      { user.tier !== 'Pagado' &&
         <NotArbolFound/>
       }
           
