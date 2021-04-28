@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import useAuth from 'src/hooks/useAuth';
 import NotArbolFound from './NotArbolFound';
+import StatusFinalizado from './StatusFinalizado';
+import StatusFinalizadoPagado from './StatusFinalizadoPagado';
 import {
   Grid,
   Paper,
@@ -52,7 +54,7 @@ const Arbol = () => {
 
   return(
     <Fragment>
-          { user.tier === 'Pagado' &&
+          { user.tier === 'Pagado' && user.state === '' &&
           <Box height={500} minWidth={725}>
             <Grid container className={classes.root} spacing={2}>
               <Grid item xs={12}>
@@ -438,6 +440,14 @@ const Arbol = () => {
 
       { user.tier !== 'Pagado' &&
         <NotArbolFound/>
+      }
+
+      { user.tier === 'Pagado' && user.state === 'finalizado' &&
+        <StatusFinalizado/>
+      }
+
+      { user.tier === 'Pagado' && user.state === 'finalizado & pagado' &&
+        <StatusFinalizadoPagado/>
       }
           
     </Fragment>)

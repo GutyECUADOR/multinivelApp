@@ -44,7 +44,7 @@ const applyFilters = (customers, query, filters) => {
     let matches = true;
 
     if (query) {
-      const properties = ['email', 'name', 'tier'];
+      const properties = ['email', 'name', 'tier', 'state'];
       let containsQuery = false;
 
       properties.forEach((property) => {
@@ -269,10 +269,13 @@ const Results = ({
                   Nombre
                 </TableCell>
                 <TableCell>
-                  Email
+                  Tipo
                 </TableCell>
                 <TableCell>
-                  Pago
+                  Aporte Voluntario
+                </TableCell>
+                <TableCell>
+                  Estado
                 </TableCell>
                 <TableCell align="right">
                   Acciones
@@ -325,6 +328,9 @@ const Results = ({
                     </TableCell>
                     <TableCell>
                       {customer.tier}
+                    </TableCell>
+                    <TableCell>
+                      {customer.state}
                     </TableCell>
                     <TableCell align="right">
                       <IconButton

@@ -52,12 +52,14 @@ const TopBar = ({ className, ...rest }) => {
         <RouterLink to="/">
           <Logo className={classes.logo} />
         </RouterLink>
-          <Typography
-            variant="h5"
-            color="textSecondary"
-          >
-            Global CrowdFunding Group
-          </Typography>
+          <Hidden mdDown>
+            <Typography
+              variant="h5"
+              color="textSecondary"
+            >
+              Global CrowdFunding Group
+            </Typography>
+          </Hidden>
         <Box flexGrow={1} />
         <Link
           className={classes.link}
@@ -74,8 +76,6 @@ const TopBar = ({ className, ...rest }) => {
           color="secondary"
           component={RouterLink}
           to="/app"
-          underline="none"
-          variant="body2"
         >
           Iniciar Sesion
         </Button>
