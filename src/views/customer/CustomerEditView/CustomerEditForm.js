@@ -15,6 +15,22 @@ import {
   makeStyles
 } from '@material-ui/core';
 
+const stateCategories = [
+  
+  {
+    id: '',
+    name: ''
+  },
+  {
+    id: 'finalizado',
+    name: 'Finalizado'
+  },
+  {
+    id: 'finalizado & pagado',
+    name: 'Finalizado & Pagado'
+  }
+];
+
 const categories = [
   
   {
@@ -49,13 +65,15 @@ const CustomerEditForm = ({
         referido_id: customer.referido_id || '',
         name: customer.name || '',
         tier: customer.tier || 0,
+        state: customer.state || '',
         submit: null
       }}
       validationSchema={Yup.object().shape({
         country: Yup.string().max(255),
         email: Yup.string().email('Debe ser un email válido').max(255).required('Email es requerido'),
         name: Yup.string().max(255).required('El nombre es requerido'),
-        tier: Yup.string().max(10)
+        tier: Yup.string().max(10),
+        state: Yup.string().max(25)
        
       })}
       onSubmit={async (values, {
@@ -214,6 +232,31 @@ const CustomerEditForm = ({
                     disabled={values.tier === 'Pagado'}
                   >
                     {categories.map((category) => (
+                      <option
+                        key={category.id}
+                        value={category.id}
+                      >
+                        {category.name}
+                      </option>
+                    ))}
+                  </TextField>
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    fullWidth
+                    label="Estado"
+                    name="state"
+                    onChange={handleChange}
+                    select
+                    SelectProps={{ native: true }}
+                    value={values.state}
+                    variant="outlined"
+                  >
+                    {stateCategories.map((category) => (
                       <option
                         key={category.id}
                         value={category.id}
