@@ -36,7 +36,7 @@ const UsuariosArbol = ({ className, ...rest }) => {
   
   useEffect( () => {
     consultarAPI();
-  },[]); 
+  }); 
 
   return (
     <Card
