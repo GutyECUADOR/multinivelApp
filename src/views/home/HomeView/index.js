@@ -28,7 +28,7 @@ const HomeView = () => {
       className={classes.fab} 
       size="large"
       color="primary" 
-      href="https://api.whatsapp.com/send?phone=+573186819767&text=Hola%21%20necesito%20m%C3%A1s%20informaci%C3%B3n%20."  target="_blank"
+      href="https://api.whatsapp.com/send?phone=+57 302 3484366&text=Hola%21%20necesito%20m%C3%A1s%20informaci%C3%B3n%20."  target="_blank"
       aria-label="Centro de Información">
       <WhatsAppIcon />
     </Fab>

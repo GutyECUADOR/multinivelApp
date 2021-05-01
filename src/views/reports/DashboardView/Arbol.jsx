@@ -5,12 +5,10 @@ import StatusFinalizado from './StatusFinalizado';
 import StatusFinalizadoPagado from './StatusFinalizadoPagado';
 import {
   Grid,
-  Paper,
   Box,
   Avatar,
   Card,
   CardContent,
-  Link,
   Typography,
   makeStyles
 } from '@material-ui/core';

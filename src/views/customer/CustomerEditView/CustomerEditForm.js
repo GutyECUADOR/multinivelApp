@@ -100,7 +100,7 @@ const CustomerEditForm = ({
             resetForm();
             setStatus({ success: true });
             setSubmitting(false);
-            if (data.commit == true) {
+            if (data.commit === true) {
               enqueueSnackbar('Informacion Actualizada ' + data.message, {
                 variant: 'success'
               });

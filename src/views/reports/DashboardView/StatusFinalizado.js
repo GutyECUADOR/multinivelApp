@@ -1,10 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import {
-  Tooltip,
-  Button,
   Grid,
   Typography,
   makeStyles
