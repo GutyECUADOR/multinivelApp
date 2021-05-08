@@ -64,6 +64,8 @@ const CustomerEditForm = ({
         email: customer.email || '',
         referido_id: customer.referido_id || '',
         name: customer.name || '',
+        username: customer.username || '',
+        password: customer.password || '',
         tier: customer.tier || 0,
         state: customer.state || '',
         submit: null
@@ -72,6 +74,8 @@ const CustomerEditForm = ({
         country: Yup.string().max(255),
         email: Yup.string().email('Debe ser un email válido').max(255).required('Email es requerido'),
         name: Yup.string().max(255).required('El nombre es requerido'),
+        username: Yup.string().max(255).required('El nombre de usuario es requerido'),
+        password: Yup.string().max(255).required('La contraseña es requerida'),
         tier: Yup.string().max(10),
         state: Yup.string().max(25)
        
@@ -159,6 +163,42 @@ const CustomerEditForm = ({
                     onChange={handleChange}
                     required
                     value={values.name}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.username && errors.username)}
+                    fullWidth
+                    helperText={touched.username && errors.username}
+                    label="Nombre usuario"
+                    name="username"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    value={values.username}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                >
+                  <TextField
+                    error={Boolean(touched.password && errors.password)}
+                    fullWidth
+                    helperText={touched.password && errors.password}
+                    label="Contraseña"
+                    name="password"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                    value={values.password}
                     variant="outlined"
                   />
                 </Grid>

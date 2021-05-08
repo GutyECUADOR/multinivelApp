@@ -44,7 +44,7 @@ const CustomerEditView = () => {
 
   useEffect(() => {
     getCustomer();
-  });
+  },[]);
 
   if (!customer) {
     return null;
